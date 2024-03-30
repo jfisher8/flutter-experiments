@@ -1,25 +1,5 @@
-// import 'package:flutter/material.dart';
-
-// class HomeScreen extends StatelessWidget {
-//   const HomeScreen({super.key});
-
-//   bool toggle = false;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: SwitchListTile(
-//           title: const Text('test switch'),
-//           value: true,
-//           onChanged: (value) {
-//             setState
-//           //logic here
-//         },),
-//       ),
-//     );
-//   }
-// }
+import 'package:dark_mode_test/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
 
@@ -44,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
           secondary: const Icon(Icons.dark_mode_rounded),
           value: isToggled,
           onChanged:(value) {
+            Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
             setState(() {
               isToggled != true ? isToggled = true : isToggled = false;
             });
