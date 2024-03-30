@@ -1,3 +1,4 @@
+import 'package:dark_mode_test/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:dark_mode_test/core_pages/home_screen.dart';
 
@@ -11,8 +12,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen()
+    return MaterialApp(
+      home: const HomeScreen(),
+      theme: lightMode,
+      darkTheme: darkMode,
       );
   }
 }

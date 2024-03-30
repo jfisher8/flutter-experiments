@@ -37,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
         child: SwitchListTile(
           title: const Text('Dark Mode'),
