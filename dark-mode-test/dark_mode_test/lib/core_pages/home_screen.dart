@@ -19,16 +19,25 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
-        child: SwitchListTile(
-          title: const Text('Dark Mode'),
-          secondary: const Icon(Icons.dark_mode_rounded),
-          value: isToggled,
-          onChanged:(value) {
+        child: IconButton(
+          onPressed:() {
             Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
             setState(() {
               isToggled != true ? isToggled = true : isToggled = false;
+              //const Icon(Icons.light_mode_rounded);
             });
-          },),
+          },
+          icon: isToggled == true ? const Icon(Icons.light_mode_rounded) : const Icon(Icons.dark_mode_rounded)),
+        // child: SwitchListTile(
+        //   title: const Text('Dark Mode'),
+        //   secondary: const Icon(Icons.dark_mode_rounded),
+        //   value: isToggled,
+        //   onChanged:(value) {
+        //     Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+        //     setState(() {
+        //       isToggled != true ? isToggled = true : isToggled = false;
+        //     });
+        //   },),
       ),
     );
   }
